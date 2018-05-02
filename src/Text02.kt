@@ -1,3 +1,4 @@
+import java.io.File
 import java.util.*
 
 /**
@@ -49,11 +50,20 @@ fun main(args: Array<String>) {
     val dates = Pair(2017, "6月")
     println("${dates.first}年${dates.second} ")
     println("lazy==$p")
+
+    println("Convert this to camelcase".spcaceToCamelCase())
+    println(Resoures.name)
+    //如果不为空
+    val files = File("Tessst").listFiles()
+    println(files?.size)
+    println(files?.size ?: throw  NullPointerException("Email is missing!"))
 }
 
 //懒属性(延迟加载)
 val p: String by lazy {
-    return@lazy "张三"
+    "jane"
+    "marry"
+    "jake"
 }
 
 /**
@@ -64,6 +74,21 @@ data class User(val name: String, val age: Int)
 /**
  * 函数默认值
  */
-fun foo(a: Int = 0, b: String = "") {
+fun foo(a: Int = 0, b: String = "") {}
 
+/**
+ * 扩展函数
+ */
+fun String.spcaceToCamelCase() {
+    println("fuck fuck fuck")
 }
+
+/**
+ * 创建单例模式
+ */
+object Resoures {
+    val name = "李四"
+}
+
+
+
