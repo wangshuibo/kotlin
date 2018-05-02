@@ -1,6 +1,11 @@
 import java.util.*
 
-/////////Kotlin基本语法
+
+/**
+ * @author Mis Wang
+ * @describe 第一天课程 Kotlin基本语法
+ */
+
 /**
  * @param a Int参数
  * @param b Int参数

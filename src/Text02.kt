@@ -1,7 +1,9 @@
 import java.util.*
 
-////////kotlin习惯用语
-
+/**
+ * @author Mis Wang
+ * @describe 第二天课程 kotlin习惯用语
+ */
 
 val lists: MutableList<Int>? = Arrays.asList(10, 99, 88, 60)
 var map: MutableMap<Int, String>? = null
