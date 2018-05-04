@@ -1,6 +1,6 @@
 /**
  * @author Mis Wang
- * @describe 包与导入
+ * @describe 第四天课程 包与导入
  */
 //源文件通常以包声明开头:
 

@@ -2,7 +2,7 @@ import java.util.*
 
 /**
  * @author Mis Wang
- * @describe 第二天课程 kotlin代码风格
+ * @describe 第三天课程 kotlin代码风格
  */
 
 
