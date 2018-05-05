@@ -92,6 +92,14 @@
 //
 //return@a 1
 //意为“从标签 @a 返回 1”，而不是“返回一个标签标注的表达式 (@a 1)”。
+
+
+/** 看[foos]方法
+ * 这里我再总结一下 ：
+ *   第一个run函数 lit@ 标签和 forEach循环的 b@ 标签两者差异是:(ps:标签名称，一般可以用变量名，可以根据你的嗜好)
+ *   1.标签的作用是根据放在哪个区域,如果是run函数的话，循环里面加了条件，用关键字return阻止该循环，是针对该方法的
+ *   2.如果标签是用到forEach,是针对某次循环的，但继续会执行下次循环。
+ */
 fun main(args: Array<String>) {
 
     var array: Array<String> = arrayOf("a", "b", "c")
@@ -99,7 +107,7 @@ fun main(args: Array<String>) {
     loop@ for ((key, values) in array.withIndex()) {
         when (values) {
             "a", "b" -> {
-                println("尼玛")
+                println("尼玛$key")
                 break@loop
             }
             else -> {
@@ -118,16 +126,20 @@ fun main(args: Array<String>) {
 }
 
 fun foos() {
-    run loop@{
-        listOf(1, 2, 3, 4, 5).forEach {
-            if (it == 3) return@loop // 从传入 run 的 lambda 表达式非局部返回
+    run {
+        listOf(1, 2, 3, 4, 5).forEach lit@{
+            if (it == 3) return@lit // 从传入 run 的 lambda 表达式非局部返回
             print(it)
         }
     }
     println(" done with nested loop")
-    listOf(1, 2, 3, 4, 5).forEach lit@{
-        if (it == 3) return   // 非局部直接返回到 foos() 的调用者
+
+    listOf(1, 2, 3, 4, 5).forEach b@{
+        if (it == 3) {
+            return@b    // 非局部直接返回到 foos() 的调用者
+        }
         print(it)
     }
     println("this point is unreachable")
+
 }

@@ -188,7 +188,7 @@ fun main(args: Array<String>) {
     for ((index, values) in array.withIndex()) {
         println("the element at $index is $values")
     }
-    for (i in 4 downTo 0 step 1) {
+    for (i in 5 downTo 0 step 3) {
         println(i)
     }
 }
